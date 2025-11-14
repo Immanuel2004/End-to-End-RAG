@@ -4,7 +4,7 @@ from src.logger.logging import logging
 
 from langgraph.graph import END,StateGraph
 from src.state.rag_state import RAGState
-from src.nodes.nodes import RAGNodes
+from src.nodes.reactnode import RAGNodes
 
 class GraphBuilder:
     def __init__(self,retriever,llm):
