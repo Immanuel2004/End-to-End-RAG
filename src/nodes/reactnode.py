@@ -18,16 +18,17 @@ class RAGNodes:
         self.llm = llm
         self._agent = None
     
-    def retrieve_docs(self,state:RAGState) -> RAGState:
+    def retrieve_docs(self, state: RAGState) -> RAGState:
         try:
-            docs = self.retriever.invoke(state.question)
+            docs = self.retriever.get_relevant_documents(state.question)
             logging.info("Retrieving docs")
             return RAGState(
                 question=state.question,
                 retrieved_docs=docs
             )
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e, sys)
+
     
     def _build_tools(self)->List[Tool]:
         def retriever_tool_fn(query:str)->str:
@@ -71,7 +72,7 @@ class RAGNodes:
 
         result = self._agent.invoke({'messages':[HumanMessage(content=state.question)]})
         messages = result.get("messages",[])
-        answer = Optional[str] = None
+        answer :Optional[str] = None
         if messages:
             answer_msg = messages[-1]
             answer = getattr(answer_msg,'content',None)

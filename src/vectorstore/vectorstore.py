@@ -15,7 +15,7 @@ class VectorStore:
         self.vectorstore = None
         self.retriever = None
     
-    def create_retriever(self,documents:List[Document]):
+    def create_vectorstore(self,documents:List[Document]):
         try:
             self.vectorstore = FAISS.from_documents(documents,self.embeddings)
             self.retriever = self.vectorstore.as_retriever()
@@ -26,6 +26,7 @@ class VectorStore:
     def get_retriever(self):
         try:
             if self.retriever is None:
-                raise ValueError("Vectorstore not initailized . call create_vectorstore first")
+                raise ValueError("Vectorstore not initialized. Call create_vectorstore first.")
+            return self.retriever  
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e, sys)

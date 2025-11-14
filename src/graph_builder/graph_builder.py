@@ -8,7 +8,9 @@ from src.nodes.reactnode import RAGNodes
 
 class GraphBuilder:
     def __init__(self,retriever,llm):
-        self.nodes = RAGNodes()
+        self.retriever = retriever
+        self.llm = llm
+        self.nodes = RAGNodes(retriever=retriever,llm=llm)
         self.graph = None
 
     def build(self):

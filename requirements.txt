@@ -11,3 +11,5 @@ wikipedia
 faiss-cpu
 ipykernel
 langchain-huggingface
+groq
+wikipedia
