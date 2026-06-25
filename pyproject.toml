@@ -3,20 +3,24 @@ name = "end-to-end-rag"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11,<3.13"
 dependencies = [
-    "beautifulsoup4>=4.14.2",
-    "faiss-cpu>=1.12.0",
-    "groq>=0.34.0",
-    "ipykernel>=7.1.0",
-    "langchain>=1.0.5",
-    "langchain-community>=0.4.1",
-    "langchain-groq>=1.0.1",
-    "langchain-huggingface>=1.0.1",
-    "langgraph>=1.0.3",
-    "pydantic>=2.12.4",
-    "python-dotenv>=1.2.1",
-    "requests>=2.32.5",
-    "streamlit>=1.51.0",
-    "wikipedia>=1.4.0",
+    "beautifulsoup4",
+    "faiss-cpu",
+    "groq",
+    "langchain==0.3.25",
+    "langchain-community==0.3.24",
+    "langchain-huggingface==0.1.2",
+    "langgraph==0.2.76",
+    "pydantic<2.11",
+    "pypdf",
+    "python-dotenv",
+    "requests",
+    "sentence-transformers==2.7.0",
+    "transformers==4.41.2",
+    "torch==2.2.2",
+    "numpy<2",
+    "streamlit",
+    "wikipedia",
+    "langchain-groq>=0.3.8",
 ]

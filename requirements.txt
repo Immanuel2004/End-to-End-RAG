@@ -13,3 +13,5 @@ ipykernel
 langchain-huggingface
 groq
 wikipedia
+pypdf
+sentence-transformers.
